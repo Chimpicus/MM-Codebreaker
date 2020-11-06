@@ -1,0 +1,94 @@
+body {
+	background: linear-gradient(to right, lightgreen, purple);
+	justify-content: center;
+	align-items: center;
+}
+
+.grid-container {
+	display: grid;
+	grid-template-rows: 40px 40px 40px 40px 40px 40px 40px 40px 40px 40px 40px;
+	padding: 0px;
+	width: 300px;
+	margin: auto;
+	margin-top: 10vh;
+	border-top: 2px solid darkslategray;
+	border-left: 2px solid darkslategray;
+	border-right: 2px solid darkslategray;
+
+	position: static;
+}
+
+.top-grid-item {
+	background-color: rgba(47, 79, 79, 0.171);
+	border-bottom: 2px solid darkslategray;
+	padding: 2px;
+	font-size: 30px;
+	text-align: center;
+	overflow: hidden;
+	font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.grid-item {
+	background-color: rgba(47, 79, 79, 0.171);
+	border-bottom: 2px solid darkslategray;
+	padding: 4px;
+	font-size: 30px;
+	text-align: center;
+	overflow: hidden;
+	height: auto;
+}
+
+.answerPin {
+	border: 2px solid black;
+	border-radius: 50%;
+	background-color: rgba(105, 105, 105, 0.658);
+	width: 30px;
+	height: 30px;
+	float: left;
+	margin-left: 5px;
+	margin-right: 5px;
+	font-family: Verdana, Geneva, Tahoma, sans-serif;
+	font-size: 25px;
+}
+
+.pin {
+	border: 2px solid black;
+	border-radius: 50%;
+	background-color: rgba(105, 105, 105, 0.658);
+	width: 30px;
+	height: 30px;
+	float: left;
+	margin-left: 5px;
+	margin-right: 5px;
+	font-family: Verdana, Geneva, Tahoma, sans-serif;
+	font-size: 25px;
+	user-select: none;
+}
+
+.feedbackcontainer {
+	max-height: 35px;
+	max-width: 30px;
+	float: left;
+}
+
+.feedbackPin {
+	border: 2px solid black;
+	border-radius: 50%;
+	background-color: rgba(105, 105, 105, 0.658);
+	width: 6px;
+	height: 6px;
+	float: left;
+	margin: 2px;
+	margin-top: 4px;
+}
+
+.submit-button {
+	color: black;
+	background-color: darkgreen;
+	border-color: black;
+	font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+	border-radius: 10%;
+}
+.colortest {
+	color: darkmagenta;
+}

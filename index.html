@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MM-Codebreaker</title>
+    <link rel="stylesheet" href="stylesheet.css">
+    <script src="script.js"></script>
+</head>
+<body>
+    <div class="grid-container">
+        <div class="top-grid-item">
+            <div id="answer_0" class="answerPin">?</div>
+            <div id="answer_1" class="answerPin">?</div>
+            <div id="answer_2" class="answerPin">?</div>
+            <div id="answer_3" class="answerPin">?</div>
+        </div>
+        <div class="grid-item">
+            <div id="guess_9_0" class="pin" onClick="colorCycle('guess_9_0')"></div>
+            <div id="guess_9_1" class="pin" onClick="colorCycle('guess_9_1')"></div>
+            <div id="guess_9_2" class="pin" onClick="colorCycle('guess_9_2')"></div>
+            <div id="guess_9_3" class="pin" onClick="colorCycle('guess_9_3')"></div>
+            <div class="feedbackcontainer">
+                <div id="feedback_9_0" class="feedbackPin"></div>
+                <div id="feedback_9_1" class="feedbackPin"></div>
+                <div id="feedback_9_2" class="feedbackPin"></div>
+                <div id="feedback_9_3" class="feedbackPin"></div>
+            </div>
+            <button id="enter_9" class="submit-button" onclick="enter('enter_9')">Enter</button>
+        </div>
+        <div class="grid-item">
+            <div id="guess_8_0" class="pin" onClick="colorCycle('guess_8_0')"></div>
+            <div id="guess_8_1" class="pin" onClick="colorCycle('guess_8_1')"></div>
+            <div id="guess_8_2" class="pin" onClick="colorCycle('guess_8_2')"></div>
+            <div id="guess_8_3" class="pin" onClick="colorCycle('guess_8_3')"></div>
+            <div class="feedbackcontainer">
+                <div id="feedback_8_0" class="feedbackPin"></div>
+                <div id="feedback_8_1" class="feedbackPin"></div>
+                <div id="feedback_8_2" class="feedbackPin"></div>
+                <div id="feedback_8_3" class="feedbackPin"></div>
+            </div>
+            <button id="enter_8" class="submit-button" onclick="enter('enter_8')">Enter</button>
+        </div>
+        <div class="grid-item">
+            <div id="guess_7_0" class="pin" onClick="colorCycle('guess_7_0')"></div>
+            <div id="guess_7_1" class="pin" onClick="colorCycle('guess_7_1')"></div>
+            <div id="guess_7_2" class="pin" onClick="colorCycle('guess_7_2')"></div>
+            <div id="guess_7_3" class="pin" onClick="colorCycle('guess_7_3')"></div>
+            <div class="feedbackcontainer">
+                <div id="feedback_7_0" class="feedbackPin"></div>
+                <div id="feedback_7_1" class="feedbackPin"></div>
+                <div id="feedback_7_2" class="feedbackPin"></div>
+                <div id="feedback_7_3" class="feedbackPin"></div>
+            </div>
+            <button id="enter_7" class="submit-button" onclick="enter('enter_7')">Enter</button>
+        </div>
+        <div class="grid-item">
+            <div id="guess_6_0" class="pin" onClick="colorCycle('guess_6_0')"></div>
+            <div id="guess_6_1" class="pin" onClick="colorCycle('guess_6_1')"></div>
+            <div id="guess_6_2" class="pin" onClick="colorCycle('guess_6_2')"></div>
+            <div id="guess_6_3" class="pin" onClick="colorCycle('guess_6_3')"></div>
+            <div class="feedbackcontainer">
+                <div id="feedback_6_0" class="feedbackPin"></div>
+                <div id="feedback_6_1" class="feedbackPin"></div>
+                <div id="feedback_6_2" class="feedbackPin"></div>
+                <div id="feedback_6_3" class="feedbackPin"></div>
+            </div>
+            <button id="enter_6" class="submit-button" onclick="enter('enter_6')">Enter</button>
+        </div>
+        <div class="grid-item">
+            <div id="guess_5_0" class="pin" onClick="colorCycle('guess_5_0')"></div>
+            <div id="guess_5_1" class="pin" onClick="colorCycle('guess_5_1')"></div>
+            <div id="guess_5_2" class="pin" onClick="colorCycle('guess_5_2')"></div>
+            <div id="guess_5_3" class="pin" onClick="colorCycle('guess_5_3')"></div>
+            <div class="feedbackcontainer">
+                <div id="feedback_5_0" class="feedbackPin"></div>
+                <div id="feedback_5_1" class="feedbackPin"></div>
+                <div id="feedback_5_2" class="feedbackPin"></div>
+                <div id="feedback_5_3" class="feedbackPin"></div>
+            </div>
+            <button id="enter_5" class="submit-button" onclick="enter('enter_5')">Enter</button>
+        </div>
+        <div class="grid-item">
+            <div id="guess_4_0" class="pin" onClick="colorCycle('guess_4_0')"></div>
+            <div id="guess_4_1" class="pin" onClick="colorCycle('guess_4_1')"></div>
+            <div id="guess_4_2" class="pin" onClick="colorCycle('guess_4_2')"></div>
+            <div id="guess_4_3" class="pin" onClick="colorCycle('guess_4_3')"></div>
+            <div class="feedbackcontainer">
+                <div id="feedback_4_0" class="feedbackPin"></div>
+                <div id="feedback_4_1" class="feedbackPin"></div>
+                <div id="feedback_4_2" class="feedbackPin"></div>
+                <div id="feedback_4_3" class="feedbackPin"></div>
+            </div>
+            <button id="enter_4" class="submit-button" onclick="enter('enter_4')">Enter</button>
+        </div>
+        <div class="grid-item">
+            <div id="guess_3_0" class="pin" onClick="colorCycle('guess_3_0')"></div>
+            <div id="guess_3_1" class="pin" onClick="colorCycle('guess_3_1')"></div>
+            <div id="guess_3_2" class="pin" onClick="colorCycle('guess_3_2')"></div>
+            <div id="guess_3_3" class="pin" onClick="colorCycle('guess_3_3')"></div>
+            <div class="feedbackcontainer">
+                <div id="feedback_3_0" class="feedbackPin"></div>
+                <div id="feedback_3_1" class="feedbackPin"></div>
+                <div id="feedback_3_2" class="feedbackPin"></div>
+                <div id="feedback_3_3" class="feedbackPin"></div>
+            </div>
+            <button id="enter_3" class="submit-button" onclick="enter('enter_3')">Enter</button>
+        </div>
+        <div id="row_2" class="grid-item">
+            <div id="guess_2_0" class="pin" onClick="colorCycle('guess_2_0')"></div>
+            <div id="guess_2_1" class="pin" onClick="colorCycle('guess_2_1')"></div>
+            <div id="guess_2_2" class="pin" onClick="colorCycle('guess_2_2')"></div>
+            <div id="guess_2_3" class="pin" onClick="colorCycle('guess_2_3')"></div>
+            <div class="feedbackcontainer">
+                <div id="feedback_2_0" class="feedbackPin"></div>
+                <div id="feedback_2_1" class="feedbackPin"></div>
+                <div id="feedback_2_2" class="feedbackPin"></div>
+                <div id="feedback_2_3" class="feedbackPin"></div>
+            </div>
+            <button id="enter_2" class="submit-button" onclick="enter('enter_2')">Enter</button>
+        </div>
+        <div class="grid-item">
+            <div id="guess_1_0" class="pin" onClick="colorCycle('guess_1_0')"></div>
+            <div id="guess_1_1" class="pin" onClick="colorCycle('guess_1_1')"></div>
+            <div id="guess_1_2" class="pin" onClick="colorCycle('guess_1_2')"></div>
+            <div id="guess_1_3" class="pin" onClick="colorCycle('guess_1_3')"></div>
+            <div class="feedbackcontainer">
+                <div id="feedback_1_0" class="feedbackPin"></div>
+                <div id="feedback_1_1" class="feedbackPin"></div>
+                <div id="feedback_1_2" class="feedbackPin"></div>
+                <div id="feedback_1_3" class="feedbackPin"></div>
+            </div>
+            <button id="enter_1" class="submit-button" onclick="enter('enter_1')">Enter</button>
+        </div>
+        <div id="row_0" class="grid-item">
+            <div id="guess_0_0" class="pin" onClick="colorCycle('guess_0_0')"></div>
+            <div id="guess_0_1" class="pin" onClick="colorCycle('guess_0_1')"></div>
+            <div id="guess_0_2" class="pin" onClick="colorCycle('guess_0_2')"></div>
+            <div id="guess_0_3" class="pin" onClick="colorCycle('guess_0_3')"></div>
+            <div class="feedbackcontainer">
+                <div id="feedback_0_0" class="feedbackPin"></div>
+                <div id="feedback_0_1" class="feedbackPin"></div>
+                <div id="feedback_0_2" class="feedbackPin"></div>
+                <div id="feedback_0_3" class="feedbackPin"></div>
+            </div class= "buttonDiv">
+            <button id="enter_0" class="submit-button" onclick="enter('enter_0')">Enter</button>
+        </div>
+    </div>
+</body>
+</html>
