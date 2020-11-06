@@ -1,0 +1,19 @@
+Mastermind - codebreaker
+
+ - need to make a function that onclick cycles through numbers 1 to 6. UPDATE - Complete -
+ - need to make a function that converts numbers to colors and assigns them to the background color of the div. UPDATE - complete -
+ - need to create a function to change the next enter button to green. UPDATE - complete - 
+ - enter button skips a row if double clicked, needs to be adressed. UPDATE - complete - 
+
+ - TODO -
+ 
+ - need to create a function that generates a 4 digit code for the answer.
+ - need to create a function that compares current row pins to answer on submit.
+ - need to creat a function that provides feedback to feedback pins.
+ - game start function that sets the answer and also turns frist row submit button on.
+ - could store pin values in an object to solve the small bug of continuing number count over different pins.
+ - enter shouldnt work if the current row pins are equal to 0.
+
+
+
+
