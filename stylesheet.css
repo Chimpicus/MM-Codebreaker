@@ -41,7 +41,9 @@ body {
 .answerPin {
 	border: 2px solid black;
 	border-radius: 50%;
-	background-color: rgba(105, 105, 105, 0.658);
+	background: linear-gradient(217deg, rgba(255, 0, 0, .6), rgba(255, 0, 0, 0) 70.71%),
+		linear-gradient(127deg, rgba(0, 255, 0, .6), rgba(0, 255, 0, 0) 70.71%),
+		linear-gradient(336deg, rgba(0, 0, 255, .6), rgba(0, 0, 255, 0) 70.71%);
 	width: 30px;
 	height: 30px;
 	float: left;

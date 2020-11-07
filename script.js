@@ -75,6 +75,7 @@ function setAnswer() {
         randomNumber = Math.floor(Math.random() * 10);
         answerPin = randomNumber;
         console.log(answerPin);
+        
 
         
 
