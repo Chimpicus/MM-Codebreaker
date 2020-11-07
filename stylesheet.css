@@ -41,9 +41,9 @@ body {
 .answerPin {
 	border: 2px solid black;
 	border-radius: 50%;
-	background: linear-gradient(217deg, rgba(255, 0, 0, .6), rgba(255, 0, 0, 0) 70.71%),
-		linear-gradient(127deg, rgba(0, 255, 0, .6), rgba(0, 255, 0, 0) 70.71%),
-		linear-gradient(336deg, rgba(0, 0, 255, .6), rgba(0, 0, 255, 0) 70.71%);
+	background: linear-gradient(217deg, rgba(255, 0, 0, .7), rgba(255, 0, 0, 0) 70.71%),
+		linear-gradient(127deg, rgba(0, 255, 0, .7), rgba(0, 255, 0, 0) 70.71%),
+		linear-gradient(336deg, rgba(0, 0, 255, .7), rgba(0, 0, 255, 0) 70.71%);
 	width: 30px;
 	height: 30px;
 	float: left;
@@ -86,7 +86,7 @@ body {
 
 .start-button {
 	color: black;
-	background-color: limegreen;
+	background-color: darkgreen;
 	border-color: black;
 	font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 	border-radius: 10%;

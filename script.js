@@ -1,17 +1,45 @@
 
 //settings
-let colorblindMode = false
+let colorblindMode = true
 let difficulty = 5
 
+let answer = []
+let currentGuess = []
 let number = 0
 currentRow = 0 // to set active row
 let color = ['', 'red', 'blue', 'limegreen', 'yellow', 'orange', 'magenta' , 'cyan', 'white', 'aquamarine'];
 
-window.onLoad = gameStart()
+
 
 function gameStart() {
-    document.getElementById("enter_0").style.background='lime'};
+    setAnswer();
+}
+   /* window.setTimeout(buttonFlashON(), 500)
+        function buttonFlashON() {
+            
+            console.log("on")
+        };
+        window.setTimeout(500, buttonFlashOff()) 
+        function buttonFlashOff() {
+            document.getElementById('enter_0').style.backgroundColor ='darkgreen'
+            console.log("off")
+        };
+        window.setTimeout(500, buttonFlashON());  
+       };*/ // not working as intended
 
+    
+function setAnswer() {
+    for (i = 0; i <= 3 ; i++) {
+        
+        answerPin = document.getElementById('answer_' + i);
+        randomNumber = Math.floor(Math.random() * 10);
+        answerPin = randomNumber;
+        answer.push(answerPin);
+        console.log(answer); 
+        document.getElementById('enter_0').style.backgroundColor ='lime';
+    }
+    
+}
 
 
 function colorCycle(id) {
@@ -51,34 +79,20 @@ function colorCycle(id) {
             document.getElementById(id).style.background='darkred'
         };
         console.log("row "+ currentRow + " Submitted");
-        window.setTimeout(nextRow,1000)
+        window.setTimeout(nextRow, 1000);
         function nextRow(){
             currentRow++;
             document.getElementById('enter_'+currentRow).style.background='lime'
-        };
-        
-        
-       
-        };
+            };
+        }
     };
         
-function checkGuess (){
+/*function checkGuess (){
     for (i = 0; i <= 3 ; i++) {
-        
-        console.log(i)
+        checkPin = document.getElementById('guess_' + currentRow + '_' + i )   
+        console.log(checkPin.number)
     }
-}
-
-function setAnswer() {
-    for (i = 0; i <= 3 ; i++) {
-        answerPin = document.getElementById('answer_' + i);
-        randomNumber = Math.floor(Math.random() * 10);
-        answerPin = randomNumber;
-        console.log(answerPin);
-        
-
-        
+}*/ // doesnt work......
 
 
-    }
-}
+
