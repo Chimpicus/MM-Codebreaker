@@ -62,5 +62,22 @@ function colorCycle(id) {
         };
     };
         
+function checkGuess (){
+    for (i = 0; i <= 3 ; i++) {
+        
+        console.log(i)
+    }
+}
+
+function setAnswer() {
+    for (i = 0; i <= 3 ; i++) {
+        answerPin = document.getElementById('answer_' + i);
+        randomNumber = Math.floor(Math.random() * 10);
+        answerPin = randomNumber;
+        console.log(answerPin);
 
         
+
+
+    }
+}
