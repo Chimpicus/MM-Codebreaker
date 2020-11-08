@@ -32,7 +32,7 @@ function setAnswer() {
     for (i = 0; i <= 3 ; i++) {
         
         answerPin = document.getElementById('answer_' + i);
-        randomNumber = Math.floor(Math.random() * (7 - 1) + 1);
+        randomNumber = Math.floor(Math.random() * ((difficulty + 2)- 1) + 1);
         answerPin = randomNumber;
         answer.push(answerPin);
         
