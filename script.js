@@ -4,7 +4,7 @@ let colorblindMode = true
 let difficulty = 5
 
 let answer = []
-let currentGuess = []
+let currentGuess = [0, 0, 0, 0]
 let number = 0
 currentRow = 0 // to set active row
 let color = ['', 'red', 'blue', 'limegreen', 'yellow', 'orange', 'magenta' , 'cyan', 'white', 'aquamarine'];
@@ -32,7 +32,7 @@ function setAnswer() {
     for (i = 0; i <= 3 ; i++) {
         
         answerPin = document.getElementById('answer_' + i);
-        randomNumber = Math.floor(Math.random() * 10);
+        randomNumber = Math.floor(Math.random() * (7 - 1) + 1);
         answerPin = randomNumber;
         answer.push(answerPin);
         
@@ -81,7 +81,7 @@ function colorCycle(id) {
         window.setTimeout(buttonOff, 500);
         function buttonOff(){
             document.getElementById(id).style.background='darkred'
-            currentGuess = []
+            currentGuess = [0, 0, 0, 0]
         };
         console.log("row "+ currentRow + " Submitted");
         window.setTimeout(nextRow, 1000);
