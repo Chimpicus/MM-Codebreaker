@@ -5,6 +5,7 @@ Mastermind - codebreaker
  - need to create a function to change the next enter button to green. UPDATE - complete - 
  - enter button skips a row if double clicked, needs to be adressed. UPDATE - complete - 
  - need to create a function that generates a 4 digit code for the answer. UPDATE - Complete - 
+- change colourcycle function to set the values of the pins in an array, to compare easily to answer. - UPDATE - complete
 
  - TODO -
  

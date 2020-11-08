@@ -35,10 +35,10 @@ function setAnswer() {
         randomNumber = Math.floor(Math.random() * 10);
         answerPin = randomNumber;
         answer.push(answerPin);
-        console.log(answer); 
+        
         document.getElementById('enter_0').style.backgroundColor ='lime';
     }
-    
+    console.log(answer); 
 }
 
 
@@ -52,18 +52,22 @@ function colorCycle(id) {
         }
         else if (number <= difficulty) {
             number++;
+            currentGuess[pin] = number;
+            
         if(colorblindMode === true) {
             guess.innerText = number;
             }
         }
         else {
         number = 1;
+        currentGuess[pin] = number;
         
     if(colorblindMode === true) {
         guess.innerText = number;
         };
     };
     guess.style.background = color[number];  
+    console.log("current guess = " + currentGuess)
 };
 };
 
@@ -77,6 +81,7 @@ function colorCycle(id) {
         window.setTimeout(buttonOff, 500);
         function buttonOff(){
             document.getElementById(id).style.background='darkred'
+            currentGuess = []
         };
         console.log("row "+ currentRow + " Submitted");
         window.setTimeout(nextRow, 1000);
