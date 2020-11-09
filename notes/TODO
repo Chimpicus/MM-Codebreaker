@@ -1,21 +1,22 @@
 Mastermind - codebreaker
 
- - need to make a function that onclick cycles through numbers 1 to 6. UPDATE - Complete -
- - need to make a function that converts numbers to colors and assigns them to the background color of the div. UPDATE - complete -
- - need to create a function to change the next enter button to green. UPDATE - complete - 
- - enter button skips a row if double clicked, needs to be adressed. UPDATE - complete - 
- - need to create a function that generates a 4 digit code for the answer. UPDATE - Complete - 
-- change colourcycle function to set the values of the pins in an array, to compare easily to answer. - UPDATE - complete
-- setAnswer should output an array with 4 number values. UPDATE  - Complete - 
+ - need to make a function that onclick cycles through numbers 1 to 6. - UPDATE - COMPLETE -
+ - need to make a function that converts numbers to colors and assigns them to the background color of the div. - UPDATE - COMPLETE -
+ - need to create a function to change the next enter button to green. UPDATE - COMPLETE - 
+ - need to create a function that generates a 4 digit code for the answer. UPDATE - COMPLETE - 
+ - change colourcycle function to set the values of the pins in an array, to compare easily to answer. - UPDATE - COMPLETE -
+ - setAnswer should output an array with 4 number values. - UPDATE  - COMPLETE - 
+ - enter shouldnt work if the current row pins are equal to 0. - UPDATE - COMPLETE - 
+ - in the colorcycle, need to get number from array current guess, so the colorcycle continues seperatley for each pin. - UPDATE - COMPLETE - 
+ - rework the program to rely mainly on the stored guesses in the current guess array. - UPDATE - COMPLETE
 
  - TODO -
  
  - need to create a function that compares current row pins to answer on submit.
  - need to creat a function that provides feedback to feedback pins.
  - game start function that sets the answer and also turns frist row submit button on.
- - in the colorcycle, need to get number from array current guess, so the colorcycle continues seperatley for each pin.
- - enter shouldnt work if the current row pins are equal to 0.
- - rework the program to rely mainly on the stored guesses in the current guess array.
+ - enter button skips a row if double clicked, needs to be adressed. UPDATE - Broken again - 
+ 
 
 
 

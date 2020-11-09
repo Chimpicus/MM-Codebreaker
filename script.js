@@ -1,17 +1,17 @@
 
 //settings
 let colorblindMode = true
-let difficulty = 5
+let difficulty = 8
 
+
+let color = ['', 'red', 'blue', 'limegreen', 'yellow', 'orange', 'magenta' , 'cyan', 'white', 'aquamarine'];
 let answer = []
 let currentGuess = [0, 0, 0, 0]
-let number = 0
-currentRow = 0 // to set active row
-let color = ['', 'red', 'blue', 'limegreen', 'yellow', 'orange', 'magenta' , 'cyan', 'white', 'aquamarine'];
-
+let currentRow = 0 
 
 
 function gameStart() {
+    //document.getElementById("enter_0").style.background = 'lime'; - doesnt work????
     setAnswer();
 }
    /* window.setTimeout(buttonFlashON(), 500)
@@ -31,15 +31,16 @@ function gameStart() {
 function setAnswer() {
     for (i = 0; i <= 3 ; i++) {
         
-        answerPin = document.getElementById('answer_' + i);
+        let answerPin = document.getElementById('answer_' + i);
         randomNumber = Math.floor(Math.random() * ((difficulty + 2)- 1) + 1);
         answerPin = randomNumber;
         answer.push(answerPin);
         
-        document.getElementById('enter_0').style.backgroundColor ='lime';
     }
     console.log(answer); 
 }
+
+gameStart();
 
 
 function colorCycle(id) {
@@ -50,46 +51,48 @@ function colorCycle(id) {
         if (currentRow != pinRow) {
             number = 0
         }
-        else if (number <= difficulty) {
-            number++;
-            currentGuess[pin] = number;
+        else if (currentGuess[pin] <= difficulty) {
+            
+            currentGuess[pin]++;
             
         if(colorblindMode === true) {
-            guess.innerText = number;
+            guess.innerText = currentGuess[pin];
             }
         }
         else {
-        number = 1;
-        currentGuess[pin] = number;
+        ;
+        currentGuess[pin] = 1;
         
     if(colorblindMode === true) {
-        guess.innerText = number;
+        guess.innerText = currentGuess[pin];
         };
     };
-    guess.style.background = color[number];  
+    guess.style.background = color[currentGuess[pin]];  
     console.log("current guess = " + currentGuess)
 };
 };
-
+  
 
     function enter(id){
-        
+                
         let submitRow = id.slice(6, 7);
-
-        if(currentRow == submitRow){
-        document.getElementById(id).style.background='red';
-        window.setTimeout(buttonOff, 500);
-        function buttonOff(){
-            document.getElementById(id).style.background='darkred'
-            currentGuess = [0, 0, 0, 0]
-        };
+        for (i = 0; i < 3; i++) {
+        }
+        if(currentRow == submitRow && currentGuess[i] !== 0){
+            document.getElementById(id).disabled = true;
+            document.getElementById(id).style.background='red';
+            window.setTimeout(buttonOff, 500);
+            function buttonOff(){
+                document.getElementById(id).style.background='darkred'
+                currentGuess = [0, 0, 0, 0]
+            };
         console.log("row "+ currentRow + " Submitted");
         window.setTimeout(nextRow, 1000);
         function nextRow(){
             currentRow++;
             document.getElementById('enter_'+currentRow).style.background='lime'
             };
-        }
+    }
     };
         
 /*function checkGuess (){
