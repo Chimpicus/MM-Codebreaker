@@ -17,6 +17,7 @@ Mastermind - codebreaker
  - game start function that sets the answer and also turns frist row submit button on.
  - enter button skips a row if double clicked, needs to be adressed. UPDATE - Broken again - 
  
+ 
 
 
 

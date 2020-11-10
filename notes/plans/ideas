@@ -1,1 +1,3 @@
-change the color cycle function to store the pin values in the current guess array.
+Store feedback pins as an array.
+if any of the pin checks result in feedback, the resut is pushed on the array.
+then assign each feedback pin an array value.

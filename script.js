@@ -1,7 +1,7 @@
 
 //settings
 let colorblindMode = true
-let difficulty = 8
+let difficulty = 5
 
 
 let color = ['', 'red', 'blue', 'limegreen', 'yellow', 'orange', 'magenta' , 'cyan', 'white', 'aquamarine'];
@@ -11,7 +11,6 @@ let currentRow = 0
 
 
 function gameStart() {
-    //document.getElementById("enter_0").style.background = 'lime'; - doesnt work????
     setAnswer();
 }
    /* window.setTimeout(buttonFlashON(), 500)
@@ -71,17 +70,25 @@ function colorCycle(id) {
     console.log("current guess = " + currentGuess)
 };
 };
+
+function checkGuess() {
+    let feedbackPins = []
+    
+}
   
 
     function enter(id){
                 
         let submitRow = id.slice(6, 7);
-        for (i = 0; i < 3; i++) {
-        }
-        if(currentRow == submitRow && currentGuess[i] !== 0){
+        let rowVerified = currentGuess.includes(0);
+
+        if(currentRow == submitRow && rowVerified === false){
             document.getElementById(id).disabled = true;
             document.getElementById(id).style.background='red';
             window.setTimeout(buttonOff, 500);
+
+            //checkGuess()
+
             function buttonOff(){
                 document.getElementById(id).style.background='darkred'
                 currentGuess = [0, 0, 0, 0]
@@ -94,13 +101,8 @@ function colorCycle(id) {
             };
     }
     };
-        
-/*function checkGuess (){
-    for (i = 0; i <= 3 ; i++) {
-        checkPin = document.getElementById('guess_' + currentRow + '_' + i )   
-        console.log(checkPin.number)
-    }
-}*/ // doesnt work......
 
+
+ 
 
 
