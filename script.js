@@ -5,9 +5,12 @@ let difficulty = 5
 
 
 let color = ['', 'red', 'blue', 'limegreen', 'yellow', 'orange', 'magenta' , 'cyan', 'white', 'aquamarine'];
+let feedbackPinColor = ['' , 'limegreen', 'red']
 let answer = []
 let currentGuess = [0, 0, 0, 0]
 let currentRow = 0 
+let feedbackPins = []
+let winner = false
 
 
 function gameStart() {
@@ -51,31 +54,64 @@ function colorCycle(id) {
             number = 0
         }
         else if (currentGuess[pin] <= difficulty) {
-            
-            currentGuess[pin]++;
-            
-        if(colorblindMode === true) {
-            guess.innerText = currentGuess[pin];
-            }
+            currentGuess[pin]++;  
+                if(colorblindMode === true) {
+                guess.innerText = currentGuess[pin];
+                }
         }
         else {
         ;
         currentGuess[pin] = 1;
-        
-    if(colorblindMode === true) {
-        guess.innerText = currentGuess[pin];
-        };
+            if(colorblindMode === true) {
+                guess.innerText = currentGuess[pin];
+                };
     };
     guess.style.background = color[currentGuess[pin]];  
-    console.log("current guess = " + currentGuess)
+    //console.log("current guess = " + currentGuess)
 };
 };
 
+//-------------------------------------------------------------work here VVVVVV --------------------------------------------------
 function checkGuess() {
-    let feedbackPins = []
+    currentFeedbackPin = 0
+    if(currentGuess.toString() == answer.toString()){
+            console.log("Winner!");
+            feedbackPins.push(1, 1, 1, 1);
+            winner = true;
+            return;
+    } 
+    for (i = 0; i <= 3 ; i++) {
+        if(currentGuess[i] == answer[i]){
+            console.log('position match!')
+            feedbackPins.push(1);
+            feedbackPin = document.getElementById('feedback_' + currentRow + '_' + currentFeedbackPin);
+            feedbackPin.style.background = feedbackPinColor[feedbackPins.shift()];
+            currentFeedbackPin++;
+            
+        }
+        else if (answer.includes(currentGuess[i])) {
+            console.log("Color Match!");
+            feedbackPins.push(2);
+            feedbackPin = document.getElementById('feedback_' + currentRow + '_' + currentFeedbackPin);
+            feedbackPin.style.background = feedbackPinColor[feedbackPins.shift()];
+            currentFeedbackPin ++;
+        }
+        
+        
+        }
+        
+    };
     
-}
+    // write some code that compares the pins for matches based on position.
+    
+    
+    
+    
+    
+ 
+
   
+//--------------------------------------------------------------work here ^^^^^^^^ -------------------------------------------------
 
     function enter(id){
                 
@@ -87,13 +123,17 @@ function checkGuess() {
             document.getElementById(id).style.background='red';
             window.setTimeout(buttonOff, 500);
 
-            //checkGuess()
+            checkGuess();
 
             function buttonOff(){
                 document.getElementById(id).style.background='darkred'
                 currentGuess = [0, 0, 0, 0]
+                feedbackPins = []
             };
         console.log("row "+ currentRow + " Submitted");
+        if(winner == true){
+            return
+        }
         window.setTimeout(nextRow, 1000);
         function nextRow(){
             currentRow++;

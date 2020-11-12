@@ -1,3 +1,10 @@
 Store feedback pins as an array.
 if any of the pin checks result in feedback, the resut is pushed on the array.
 then assign each feedback pin an array value.
+
+
+
+feedback pin color assignment idea.......
+
+for loop i
+feedbackColor = feedback_ + currentrow + _ + i == feedbackPins[i]
