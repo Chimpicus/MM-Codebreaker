@@ -73,9 +73,12 @@ function colorCycle(id) {
 
 //-------------------------------------------------------------work here VVVVVV --------------------------------------------------
 function checkGuess() {
-    currentFeedbackPin = 0
+   let currentFeedbackPin = 0
+   let alreadyMatched = []
+
     if(currentGuess.toString() == answer.toString()){
             console.log("Winner!");
+            alert('Winner!')
             feedbackPins.push(1, 1, 1, 1);
             winner = true;
             return;
@@ -95,6 +98,9 @@ function checkGuess() {
             feedbackPin = document.getElementById('feedback_' + currentRow + '_' + currentFeedbackPin);
             feedbackPin.style.background = feedbackPinColor[feedbackPins.shift()];
             currentFeedbackPin ++;
+        }
+        else {
+
         }
         
         
