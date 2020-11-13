@@ -1,6 +1,6 @@
 
 //settings
-let colorblindMode = false
+let colorblindMode = true
 let difficulty = 5
 
 
