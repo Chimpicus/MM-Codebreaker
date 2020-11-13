@@ -1,6 +1,6 @@
 
 //settings
-let colorblindMode = true
+let colorblindMode = false
 let difficulty = 5
 
 
@@ -96,24 +96,23 @@ function checkGuess() {
             console.log('position match!')
             feedbackPins.push(1);
             cloneAnswer[i] = 0;
-            console.log(cloneAnswer)
-             
+            console.log('after position check = ' + cloneAnswer)
                     }
         }
     };
         function colorCheck(cloneAnswer) {
-            for (i = 0; i < currentGuess.length; i++){
+            for (i = 0; i <= currentGuess.length; i++){
         if (cloneAnswer.includes(currentGuess[i])) {
-            console.log("Color Match!");
             feedbackPins.push(2);
-            cloneAnswer[currentGuess[i.key]] = 0;
-            console.log(cloneAnswer); 
+            cloneAnswer[currentGuess[i.value]] = 0;
+            
         }
+        console.log('after color check = ' + cloneAnswer); 
         }
     };
         
     
-    function updateFeedbackColor() {
+    function updateFeedbackColor(cloneAnswer) {
         console.log(feedbackPins)
             for(i = 0; i < currentGuess.length; i++) {            
         feedbackPin = document.getElementById('feedback_' + currentRow + '_' + i);    
