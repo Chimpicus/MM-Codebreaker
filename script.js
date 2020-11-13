@@ -13,6 +13,7 @@ let feedbackPins = []
 let winner = false
 
 
+
 function gameStart() {
     setAnswer();
 }
@@ -73,42 +74,57 @@ function colorCycle(id) {
 
 //-------------------------------------------------------------work here VVVVVV --------------------------------------------------
 function checkGuess() {
-   let currentFeedbackPin = 0
-   let alreadyMatched = []
+    let cloneAnswer = Array.from(answer)
 
     if(currentGuess.toString() == answer.toString()){
             console.log("Winner!");
             alert('Winner!')
-            feedbackPins.push(1, 1, 1, 1);
+            feedbackPins = [1, 1, 1, 1];
             winner = true;
             return;
     } 
-    for (i = 0; i <= 3 ; i++) {
-        if(currentGuess[i] == answer[i]){
-            console.log('position match!')
-            feedbackPins.push(1);
-            feedbackPin = document.getElementById('feedback_' + currentRow + '_' + currentFeedbackPin);
-            feedbackPin.style.background = feedbackPinColor[feedbackPins.shift()];
-            currentFeedbackPin++;
-            
-        }
-        else if (answer.includes(currentGuess[i])) {
-            console.log("Color Match!");
-            feedbackPins.push(2);
-            feedbackPin = document.getElementById('feedback_' + currentRow + '_' + currentFeedbackPin);
-            feedbackPin.style.background = feedbackPinColor[feedbackPins.shift()];
-            currentFeedbackPin ++;
-        }
-        else {
-
-        }
-        
-        
-        }
-        
+    else {
+        positionCheck(cloneAnswer);
+        colorCheck(cloneAnswer);
+        updateFeedbackColor()
+    }
     };
     
-    // write some code that compares the pins for matches based on position.
+    function positionCheck(cloneAnswer){
+        for (i = 0; i < currentGuess.length; i++) {
+        if(currentGuess[i] == cloneAnswer[i]){
+            console.log('position match!')
+            feedbackPins.push(1);
+            cloneAnswer[i] = 0;
+            console.log(cloneAnswer)
+             
+                    }
+        }
+    };
+        function colorCheck(cloneAnswer) {
+            for (i = 0; i < currentGuess.length; i++){
+        if (cloneAnswer.includes(currentGuess[i])) {
+            console.log("Color Match!");
+            feedbackPins.push(2);
+            cloneAnswer[currentGuess[i.key]] = 0;
+            console.log(cloneAnswer); 
+        }
+        }
+    };
+        
+    
+    function updateFeedbackColor() {
+        console.log(feedbackPins)
+            for(i = 0; i < currentGuess.length; i++) {            
+        feedbackPin = document.getElementById('feedback_' + currentRow + '_' + i);    
+        feedbackPin.style.background = feedbackPinColor[feedbackPins.shift()];
+        }
+        };
+        
+        
+    
+    
+    
     
     
     
