@@ -97,7 +97,6 @@ function colorCycle(id) {
                 };
     };
     guess.style.background = color[currentGuess[pin]];  
-    //console.log("current guess = " + currentGuess)
 };
 };
 
@@ -105,9 +104,9 @@ function checkGuess() {
     let cloneAnswer = Array.from(answer)
 
     if(currentGuess.toString() == answer.toString()){
-            console.log("Winner!");
-            alert('Winner!')
             feedbackPins = [1, 1, 1, 1];
+            updateFeedbackColor()
+            alert('Winner!')
             winner = true;
             return;
     } 
@@ -144,7 +143,12 @@ function checkGuess() {
         window.setTimeout(nextRow, 1000);
         function nextRow(){
             currentRow++;
+            if(currentRow == 10) {
+                alert("Game Over")
+            }
+            else {
             document.getElementById('enter_'+currentRow).style.background='lime'
+            }
             };
     }
     };
