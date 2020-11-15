@@ -57,9 +57,11 @@ function positionCheck(cloneAnswer){
 };
     function colorCheck(cloneAnswer) {
         for (i = 0; i <= currentGuess.length; i++){
-    if (cloneAnswer.includes(currentGuess[i]) && currentGuess[i] != 0) {
+    if (currentGuess.includes(cloneAnswer[i]) && currentGuess[i] != 0) {
         feedbackPins.push(2);
-        cloneAnswer[currentGuess[i.value]] = 0;            
+        
+        cloneAnswer[i] = 0; 
+        console.log(cloneAnswer)           
     }
      
     }
