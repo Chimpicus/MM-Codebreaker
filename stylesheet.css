@@ -68,8 +68,8 @@ body {
 }
 
 .feedbackcontainer {
-	max-height: 35px;
-	max-width: 35px;
+	height: 35px;
+	width: 35px;
 	float: left;
 }
 

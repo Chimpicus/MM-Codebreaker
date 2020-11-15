@@ -45,6 +45,35 @@ function setAnswer() {
 
 gameStart();
 
+function positionCheck(cloneAnswer){
+    for (i = 0; i < currentGuess.length; i++) {
+    if(currentGuess[i] == cloneAnswer[i]){
+        feedbackPins.push(1);
+        cloneAnswer[i] = 0;
+        currentGuess[i] = 0;
+        
+                }
+    }
+};
+    function colorCheck(cloneAnswer) {
+        for (i = 0; i <= currentGuess.length; i++){
+    if (cloneAnswer.includes(currentGuess[i]) && currentGuess[i] != 0) {
+        feedbackPins.push(2);
+        cloneAnswer[currentGuess[i.value]] = 0;            
+    }
+     
+    }
+};
+    
+
+function updateFeedbackColor() {
+    console.log(feedbackPins)
+        for(i = 0; i < currentGuess.length; i++) {            
+    feedbackPin = document.getElementById('feedback_' + currentRow + '_' + i);    
+    feedbackPin.style.background = feedbackPinColor[feedbackPins.shift()];
+    }
+    };
+
 
 function colorCycle(id) {
     let guess = document.getElementById(id);
@@ -72,7 +101,6 @@ function colorCycle(id) {
 };
 };
 
-//-------------------------------------------------------------work here VVVVVV --------------------------------------------------
 function checkGuess() {
     let cloneAnswer = Array.from(answer)
 
@@ -90,49 +118,7 @@ function checkGuess() {
     }
     };
     
-    function positionCheck(cloneAnswer){
-        for (i = 0; i < currentGuess.length; i++) {
-        if(currentGuess[i] == cloneAnswer[i]){
-            console.log('position match!')
-            feedbackPins.push(1);
-            cloneAnswer[i] = 0;
-            console.log('after position check = ' + cloneAnswer)
-                    }
-        }
-    };
-        function colorCheck(cloneAnswer) {
-            for (i = 0; i <= currentGuess.length; i++){
-        if (cloneAnswer.includes(currentGuess[i])) {
-            feedbackPins.push(2);
-            cloneAnswer[currentGuess[i.value]] = 0;
-            
-        }
-        console.log('after color check = ' + cloneAnswer); 
-        }
-    };
-        
-    
-    function updateFeedbackColor(cloneAnswer) {
-        console.log(feedbackPins)
-            for(i = 0; i < currentGuess.length; i++) {            
-        feedbackPin = document.getElementById('feedback_' + currentRow + '_' + i);    
-        feedbackPin.style.background = feedbackPinColor[feedbackPins.shift()];
-        }
-        };
-        
-        
-    
-    
-    
-    
-    
-    
-    
-    
- 
-
-  
-//--------------------------------------------------------------work here ^^^^^^^^ -------------------------------------------------
+   
 
     function enter(id){
                 
