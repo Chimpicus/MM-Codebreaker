@@ -1,150 +1,128 @@
-
 //settings
-let colorblindMode = true
-let difficulty = 5
+let colorblindMode = true;
+let difficulty = 5;
 
+let color = [ '', 'red', 'blue', 'limegreen', 'yellow', 'orange', 'magenta', 'cyan', 'white', 'aquamarine' ];
+let feedbackPinColor = [ '', 'limegreen', 'red' ];
+let answer = [];
+let currentGuess = [ 0, 0, 0, 0 ];
+let currentRow = 0;
+let feedbackPins = [];
+let winner = false;
 
-let color = ['', 'red', 'blue', 'limegreen', 'yellow', 'orange', 'magenta' , 'cyan', 'white', 'aquamarine'];
-let feedbackPinColor = ['' , 'limegreen', 'red']
-let answer = []
-let currentGuess = [0, 0, 0, 0]
-let currentRow = 0 
-let feedbackPins = []
-let winner = false
-
-
-function togglePopup() {
-    document.getElementById("help-box").classList.toggle("active");
+function togglePopup () {
+	document.getElementById('help-box').classList.toggle('active');
 }
 
-function gameStart() {
-    setAnswer();
-};
+function gameStart () {
+	setAnswer();
+}
 
-function setAnswer() {
-    for (i = 0; i <= 3 ; i++) {
-        
-        let answerPin = document.getElementById('answer_' + i);
-        randomNumber = Math.floor(Math.random() * ((difficulty + 2)- 1) + 1);
-        answerPin = randomNumber;
-        answer.push(answerPin);
-        
-    }
-    console.log(answer); 
-};
+function setAnswer () {
+	for (i = 0; i <= 3; i++) {
+		let answerPin = document.getElementById('answer_' + i);
+		randomNumber = Math.floor(Math.random() * (difficulty + 2 - 1) + 1);
+		answerPin = randomNumber;
+		answer.push(answerPin);
+	}
+	console.log(answer);
+}
 
 gameStart();
 
-function positionCheck(cloneAnswer){
-    for (i = 0; i < currentGuess.length; i++) {
-    if(currentGuess[i] == cloneAnswer[i]){
-        feedbackPins.push(1);
-        cloneAnswer[i] = 0;
-        currentGuess[i] = 0;
-        
-                }
-    }
-};
-    function colorCheck(cloneAnswer) {
-        for (i = 0; i <= currentGuess.length; i++){
-    if (currentGuess.includes(cloneAnswer[i]) && currentGuess[i] != 0) {
-        feedbackPins.push(2);
-        
-        cloneAnswer[i] = 0; 
-        console.log(cloneAnswer)           
-    }
-     
-    }
-};
-    
+function positionCheck (cloneAnswer) {
+	for (i = 0; i < currentGuess.length; i++) {
+		if (currentGuess[i] == cloneAnswer[i]) {
+			feedbackPins.push(1);
+			cloneAnswer[i] = 0;
+			currentGuess[i] = 0;
+		}
+	}
+}
+function colorCheck (cloneAnswer) {
+	for (i = 0; i <= currentGuess.length; i++) {
+		if (currentGuess.includes(cloneAnswer[i]) && currentGuess[i] !== 0) {
+			feedbackPins.push(2);
+			cloneAnswer[i] = 0;
+			console.log(cloneAnswer);
+		}
+	}
+}
 
-function updateFeedbackColor() {
-    console.log(feedbackPins)
-        for(i = 0; i < currentGuess.length; i++) {            
-    feedbackPin = document.getElementById('feedback_' + currentRow + '_' + i);    
-    feedbackPin.style.background = feedbackPinColor[feedbackPins.shift()];
-    }
-    };
+function updateFeedbackColor () {
+	console.log(feedbackPins);
+	for (i = 0; i < currentGuess.length; i++) {
+		feedbackPin = document.getElementById('feedback_' + currentRow + '_' + i);
+		feedbackPin.style.background = feedbackPinColor[feedbackPins.shift()];
+	}
+}
 
+function colorCycle (id) {
+	let guess = document.getElementById(id);
+	let pinRow = id.slice(6, 7);
+	let pin = guess.id.slice(8);
+	if (pinRow == currentRow) {
+		if (currentRow != pinRow) {
+			number = 0;
+		} else if (currentGuess[pin] <= difficulty) {
+			currentGuess[pin]++;
+			if (colorblindMode === true) {
+				guess.innerText = currentGuess[pin];
+			}
+		} else {
+			currentGuess[pin] = 1;
+			if (colorblindMode === true) {
+				guess.innerText = currentGuess[pin];
+			}
+		}
+		guess.style.background = color[currentGuess[pin]];
+	}
+}
 
-function colorCycle(id) {
-    let guess = document.getElementById(id);
-    let pinRow = id.slice(6, 7);
-    let pin = guess.id.slice(8)
-    if(pinRow == currentRow) {
-        if (currentRow != pinRow) {
-            number = 0
-        }
-        else if (currentGuess[pin] <= difficulty) {
-            currentGuess[pin]++;  
-                if(colorblindMode === true) {
-                guess.innerText = currentGuess[pin];
-                }
-        }
-        else {
-        currentGuess[pin] = 1;
-            if(colorblindMode === true) {
-                guess.innerText = currentGuess[pin];
-                };
-            };
-        guess.style.background = color[currentGuess[pin]];  
-    };
-};
+function checkGuess () {
+	let cloneAnswer = Array.from(answer);
 
-function checkGuess() {
-    let cloneAnswer = Array.from(answer)
+	if (currentGuess.toString() == answer.toString()) {
+		feedbackPins = [ 1, 1, 1, 1 ];
+		updateFeedbackColor();
+		alert('Winner!');
+		winner = true;
+		return;
+	} else {
+		positionCheck(cloneAnswer);
+		colorCheck(cloneAnswer);
+		updateFeedbackColor();
+	}
+}
 
-    if(currentGuess.toString() == answer.toString()){
-            feedbackPins = [1, 1, 1, 1];
-            updateFeedbackColor()
-            alert('Winner!')
-            winner = true;
-            return;
-    } 
-    else {
-        positionCheck(cloneAnswer);
-        colorCheck(cloneAnswer);
-        updateFeedbackColor()
-        }
-    };
-    
-   
+function enter (id) {
+	let submitRow = id.slice(6, 7);
+	let rowVerified = currentGuess.includes(0);
 
-    function enter(id){
-                
-        let submitRow = id.slice(6, 7);
-        let rowVerified = currentGuess.includes(0);
+	if (currentRow == submitRow && rowVerified === false) {
+		document.getElementById(id).disabled = true;
+		document.getElementById(id).style.background = 'red';
+		window.setTimeout(buttonOff, 500);
 
-        if(currentRow == submitRow && rowVerified === false){
-            document.getElementById(id).disabled = true;
-            document.getElementById(id).style.background='red';
-            window.setTimeout(buttonOff, 500);
+		checkGuess();
 
-            checkGuess();
-
-            function buttonOff(){
-                document.getElementById(id).style.background='darkred'
-                currentGuess = [0, 0, 0, 0]
-                feedbackPins = []
-            };
-        console.log("row "+ currentRow + " Submitted");
-        if(winner == true){
-            return
-        }
-        window.setTimeout(nextRow, 1000);
-        function nextRow(){
-            currentRow++;
-            if(currentRow == 10) {
-                alert("Game Over")
-            }
-            else {
-            document.getElementById('enter_'+currentRow).style.background='lime'
-            }
-            };
-    }
-    };
-
-
- 
-
-
+		function buttonOff () {
+			document.getElementById(id).style.background = 'darkred';
+			currentGuess = [ 0, 0, 0, 0 ];
+			feedbackPins = [];
+		}
+		console.log('row ' + currentRow + ' Submitted');
+		if (winner == true) {
+			return;
+		}
+		window.setTimeout(nextRow, 1000);
+		function nextRow () {
+			currentRow++;
+			if (currentRow == 10) {
+				alert('Game Over');
+			} else {
+				document.getElementById('enter_' + currentRow).style.background = 'lime';
+			}
+		}
+	}
+}
