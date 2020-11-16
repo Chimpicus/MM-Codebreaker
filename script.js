@@ -41,7 +41,7 @@ function positionCheck (cloneAnswer) {
 }
 function preCheck (cloneAnswer) {
 	for (i = 0; i < currentGuess.length; i++) {
-		if (!cloneAnswer.includes(currentGuess[i])) {
+		if (cloneAnswer.includes(currentGuess[i])== false) {
 			currentGuess[i] = null;
 		}
 	}
