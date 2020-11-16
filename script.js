@@ -34,16 +34,23 @@ function positionCheck (cloneAnswer) {
 	for (i = 0; i < currentGuess.length; i++) {
 		if (currentGuess[i] == cloneAnswer[i]) {
 			feedbackPins.push(1);
-			cloneAnswer[i] = 0;
-			currentGuess[i] = 0;
+			cloneAnswer[i] = null;
+			currentGuess[i] = null;
+		}
+	}
+}
+function preCheck (cloneAnswer) {
+	for (i = 0; i < currentGuess.length; i++) {
+		if (!cloneAnswer.includes(currentGuess[i])) {
+			currentGuess[i] = null;
 		}
 	}
 }
 function colorCheck (cloneAnswer) {
 	for (i = 0; i <= currentGuess.length; i++) {
-		if (currentGuess.includes(cloneAnswer[i]) && currentGuess[i] !== 0) {
+		if (currentGuess.includes(cloneAnswer[i]) && currentGuess[i] !== null) {
 			feedbackPins.push(2);
-			cloneAnswer[i] = 0;
+			cloneAnswer[i] = null;
 			console.log(cloneAnswer);
 		}
 	}
@@ -90,6 +97,7 @@ function checkGuess () {
 		return;
 	} else {
 		positionCheck(cloneAnswer);
+		preCheck(cloneAnswer);
 		colorCheck(cloneAnswer);
 		updateFeedbackColor();
 	}
