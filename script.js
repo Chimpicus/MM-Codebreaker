@@ -13,24 +13,14 @@ let feedbackPins = []
 let winner = false
 
 
+function togglePopup() {
+    document.getElementById("help-box").classList.toggle("active");
+}
 
 function gameStart() {
     setAnswer();
-}
-   /* window.setTimeout(buttonFlashON(), 500)
-        function buttonFlashON() {
-            
-            console.log("on")
-        };
-        window.setTimeout(500, buttonFlashOff()) 
-        function buttonFlashOff() {
-            document.getElementById('enter_0').style.backgroundColor ='darkgreen'
-            console.log("off")
-        };
-        window.setTimeout(500, buttonFlashON());  
-       };*/ // not working as intended
+};
 
-    
 function setAnswer() {
     for (i = 0; i <= 3 ; i++) {
         
@@ -41,7 +31,7 @@ function setAnswer() {
         
     }
     console.log(answer); 
-}
+};
 
 gameStart();
 
@@ -92,14 +82,13 @@ function colorCycle(id) {
                 }
         }
         else {
-        ;
         currentGuess[pin] = 1;
             if(colorblindMode === true) {
                 guess.innerText = currentGuess[pin];
                 };
+            };
+        guess.style.background = color[currentGuess[pin]];  
     };
-    guess.style.background = color[currentGuess[pin]];  
-};
 };
 
 function checkGuess() {
@@ -116,7 +105,7 @@ function checkGuess() {
         positionCheck(cloneAnswer);
         colorCheck(cloneAnswer);
         updateFeedbackColor()
-    }
+        }
     };
     
    

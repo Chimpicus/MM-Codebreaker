@@ -8,12 +8,34 @@
     <script src="script.js"></script>
 </head>
 <body>
-    <div class="grid-container">
+    
+   <div>
+       <div class="popup" id="help-box">
+           <div class="overlay"></div>
+           <div class="content">
+               <div class="close-btn" onclick="togglePopup()">&times;</div>
+               <h3>Help - How to play!</h3>
+               <p>Codebreaker is a puzzle game and the objective is to guess the code that is hidden behind the question marks.
+                   To play, first start on the bottom row by clicking the circles to change the colors of your guess. Then hit enter.
+               </p>
+               <p> After submiting your guess, the game will give feedback and light up the smaller circles on the submitted row. These circles are known as feedback lights. </p>
+               <p>A <span class="green">green</span> feeback light indicates that you have one color correct and in the correct poistion.</p>
+               <p> A <span class="red">red</span> feedback light indicates that you have one color correct, but it is in the incorrect position.</p>
+               <p>Good Luck!</p>
+            </div>
+        </div>
+   </div>
+   
+    
+   <div class="grid-container">
         <div class="top-grid-item">
             <div id="answer_0" class="answerPin">?</div>
             <div id="answer_1" class="answerPin">?</div>
             <div id="answer_2" class="answerPin">?</div>
             <div id="answer_3" class="answerPin">?</div>
+            <div class="feedbackcontainer">
+            </div>
+            <button class="help-btn" onclick="togglePopup()">Help</button>
         </div>
         <div class="grid-item">
             <div id="guess_9_0" class="pin" onClick="colorCycle('guess_9_0')"></div>

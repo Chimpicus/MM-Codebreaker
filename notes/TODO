@@ -9,13 +9,16 @@ Mastermind - codebreaker
  - enter shouldnt work if the current row pins are equal to 0. - UPDATE - COMPLETE - 
  - in the colorcycle, need to get number from array current guess, so the colorcycle continues seperatley for each pin. - UPDATE - COMPLETE - 
  - rework the program to rely mainly on the stored guesses in the current guess array. - UPDATE - COMPLETE
+ - enter button skips a row if double clicked, needs to be adressed. UPDATE - UPDATE - COMPLETE
+ - need to creat a function that provides feedback to feedback pins. - UPDATE - COMPLETE
+ - need to create a function that compares current row pins to answer on submit. - UPDATE - COMPLETE -
 
  - TODO -
+  
+ - game start function that sets the answer and also turns frist row submit button on. 
+ - add audio.
+ -  reveal the answer when game is won.
  
- - need to create a function that compares current row pins to answer on submit.
- - need to creat a function that provides feedback to feedback pins.
- - game start function that sets the answer and also turns frist row submit button on.
- - enter button skips a row if double clicked, needs to be adressed. UPDATE - Broken again - 
  
  
 
