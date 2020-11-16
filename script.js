@@ -97,7 +97,7 @@ function checkGuess () {
 		return;
 	} else {
 		positionCheck(cloneAnswer);
-		preCheck(cloneAnswer);
+		//preCheck(cloneAnswer);
 		colorCheck(cloneAnswer);
 		updateFeedbackColor();
 	}
