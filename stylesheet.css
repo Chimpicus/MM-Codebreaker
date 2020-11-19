@@ -24,8 +24,10 @@ body {
 	background: rgba(0, 0, 0, 0.678);
 	color: #fff;
 
-	width: 350px;
-	height: 550px;
+	max-width: 350px;
+	max-height: 550px;
+	min-width: 300px;
+	min-height: 150px;
 	z-index: 2;
 	text-align: center;
 	padding: 20px;

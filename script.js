@@ -8,10 +8,15 @@ let answer = [];
 let currentGuess = [ 0, 0, 0, 0 ];
 let currentRow = 0;
 let feedbackPins = [];
-let winner = false;
 
 function togglePopup () {
 	document.getElementById('help-box').classList.toggle('active');
+}
+function toggleWinner () {
+	document.getElementById('winner').classList.toggle('active');
+}
+function toggleLoser () {
+	document.getElementById('loser').classList.toggle('active');
 }
 
 function gameStart () {
@@ -34,6 +39,7 @@ function colorCycle (id) {
 	let guess = document.getElementById(id);
 	let pinRow = id.slice(6, 7);
 	let pin = guess.id.slice(8);
+
 	if (pinRow == currentRow) {
 		if (currentRow != pinRow) {
 			number = 0;
@@ -58,12 +64,12 @@ function checkGuess () {
 	if (currentGuess.toString() == answer.toString()) {
 		feedbackPins = [ 1, 1, 1, 1 ];
 		updateFeedbackColor();
-		alert('Winner!');
-		winner = true;
+		winner();
+		setTimeout(toggleWinner, 300);
 		return;
 	} else {
 		positionCheck(cloneAnswer);
-		preCheck(cloneAnswer);
+		//preCheck(cloneAnswer); dont think i need this!!
 		colorCheck(cloneAnswer);
 		updateFeedbackColor();
 	}
@@ -126,10 +132,18 @@ function enter (id) {
 		function nextRow () {
 			currentRow++;
 			if (currentRow == 10) {
-				alert('Game Over');
+				toggleLoser();
 			} else {
 				document.getElementById('enter_' + currentRow).style.background = 'lime';
 			}
 		}
+	}
+}
+
+function winner () {
+	for (i = 0; i <= 3; i++) {
+		document.getElementById('answer_' + i).style.background = color[answer[i]];
+		document.getElementById('answer_' + i).innerText = answer[i];
+		setTimeout(300);
 	}
 }
