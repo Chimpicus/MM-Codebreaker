@@ -67,13 +67,6 @@ body {
 	border-radius: 10%;
 	font-size: 15px;
 }
-.green {
-	color: limegreen;
-}
-
-.red {
-	color: red;
-}
 
 .grid-container {
 	display: grid;
