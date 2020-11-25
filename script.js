@@ -69,7 +69,7 @@ function checkGuess () {
 		return;
 	} else {
 		positionCheck(cloneAnswer);
-		//preCheck(cloneAnswer); dont think i need this!!
+		preCheck(cloneAnswer);
 		colorCheck(cloneAnswer);
 		updateFeedbackColor();
 	}
