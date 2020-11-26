@@ -1,13 +1,25 @@
 //settings
-let colorblindMode = true;
+let colorblindMode = false;
 let difficulty = 5;
 
-let color = [ '', 'red', 'blue', 'limegreen', 'yellow', 'orange', 'magenta', 'cyan', 'white', 'aquamarine' ];
+let color = [
+	'',
+	'rgba(255, 5, 5, 0.6)',
+	'rgba(5, 13, 255, 0.6)',
+	'rgba(18, 255, 5, 0.6)',
+	'rgba(255, 255, 5, 0.6)',
+	'rgba(255, 101, 5, 0.6)',
+	'rgba(201, 5, 255, 0.6)',
+	'rgba(5, 226, 255, 0.6)',
+	'rgba(199, 203, 189, 0.6)',
+	'rgba(5, 255, 163, 0.6)'
+];
 let feedbackPinColor = [ '', 'limegreen', 'red' ];
 let answer = [];
 let currentGuess = [ 0, 0, 0, 0 ];
 let currentRow = 0;
 let feedbackPins = [];
+let gameWon = false;
 
 function togglePopup () {
 	document.getElementById('help-box').classList.toggle('active');
@@ -65,6 +77,7 @@ function checkGuess () {
 		feedbackPins = [ 1, 1, 1, 1 ];
 		updateFeedbackColor();
 		winner();
+		gameWon = true;
 		setTimeout(toggleWinner, 300);
 		return;
 	} else {
@@ -124,14 +137,14 @@ function enter (id) {
 			currentGuess = [ 0, 0, 0, 0 ];
 			feedbackPins = [];
 		}
-		console.log('row ' + currentRow + ' Submitted');
-		if (winner == true) {
+		if (gameWon == true) {
 			return;
 		}
+
 		window.setTimeout(nextRow, 1000);
 		function nextRow () {
 			currentRow++;
-			if (currentRow == 10) {
+			if (currentRow == 10 && gameWon == false) {
 				toggleLoser();
 			} else {
 				document.getElementById('enter_' + currentRow).style.background = 'lime';
@@ -143,7 +156,9 @@ function enter (id) {
 function winner () {
 	for (i = 0; i <= 3; i++) {
 		document.getElementById('answer_' + i).style.background = color[answer[i]];
-		document.getElementById('answer_' + i).innerText = answer[i];
-		setTimeout(300);
+		document.getElementById('answer_' + i).innerText = '';
+		if (colorblindMode == true) {
+			document.getElementById('answer_' + i).innerText = answer[i];
+		}
 	}
 }

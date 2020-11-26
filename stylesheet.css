@@ -75,16 +75,18 @@ body {
 	width: 300px;
 	margin: auto;
 	margin-top: 10vh;
-	border-top: 2px solid darkslategray;
-	border-left: 2px solid darkslategray;
-	border-right: 2px solid darkslategray;
+	border-top: 2px groove rgba(54, 54, 54);
+	border-left: 2px groove rgba(54, 54, 54);
+	border-right: 2px groove rgba(54, 54, 54);
+	background-color: rgba(48, 50, 58, 0.5);
 	position: static;
 }
 
 .top-grid-item {
-	background-color: rgba(47, 79, 79, 0.171);
-	border-bottom: 2px solid darkslategray;
+	background-color: rgba(48, 50, 58, 0.5);
+	border-bottom: 2px groove rgba(54, 54, 54);
 	padding: 2px;
+	padding-left: 3px;
 	font-size: 30px;
 	text-align: center;
 	overflow: hidden;
@@ -92,9 +94,9 @@ body {
 }
 
 .grid-item {
-	background-color: rgba(47, 79, 79, 0.171);
-	border-bottom: 2px solid darkslategray;
-	padding: 4px;
+	background-color: rgba(48, 50, 58, 0.5);
+	border-bottom: 2px groove rgba(54, 54, 54);
+	padding: 3px;
 	font-size: 30px;
 	text-align: center;
 	overflow: hidden;
@@ -102,7 +104,7 @@ body {
 }
 
 .answerPin {
-	border: 2px solid black;
+	border: 2px groove rgba(54, 54, 54);
 	border-radius: 50%;
 	background: linear-gradient(217deg, rgba(255, 0, 0, .8), rgba(255, 0, 0, 0) 70.71%),
 		linear-gradient(127deg, rgba(0, 255, 0, .8), rgba(0, 255, 0, 0) 70.71%),
@@ -117,9 +119,9 @@ body {
 }
 
 .pin {
-	border: 2px solid black;
+	border: 2px groove rgba(54, 54, 54);
 	border-radius: 50%;
-	background-color: rgba(105, 105, 105, 0.658);
+	background-color: rgba(16, 61, 63, 0.275);
 	width: 30px;
 	height: 30px;
 	float: left;
@@ -137,9 +139,9 @@ body {
 }
 
 .feedbackPin {
-	border: 2px solid black;
+	border: 2px groove rgba(54, 54, 54);
 	border-radius: 50%;
-	background-color: rgba(105, 105, 105, 0.658);
+	background-color: rgba(16, 61, 63, 0.247);
 	width: 6px;
 	height: 6px;
 	float: left;
