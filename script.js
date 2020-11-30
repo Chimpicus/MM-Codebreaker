@@ -8,10 +8,6 @@ let game = {
 	currentRow   : 0,
 	answer       : [],
 	gameWon      : false,
-	gameStart    : () => {
-		setAnswer();
-	},
-
 	setAnswer    : () => {
 		for (i = 0; i <= 3; i++) {
 			let answerPin = document.getElementById('answer_' + i);
@@ -91,7 +87,7 @@ let submit = {
 
 		if (game.currentGuess.toString() == game.answer.toString()) {
 			pins.feedbackPins = [ 1, 1, 1, 1 ];
-			updateFeedbackColor();
+			submit.updateFeedbackColor();
 			game.winner();
 			game.gameWon = true;
 			setTimeout(popups.toggleWinner, 300);
@@ -160,8 +156,8 @@ let submit = {
 			window.setTimeout(nextRow, 1000);
 			function nextRow () {
 				game.currentRow++;
-				if (game.currentRow == 10 && game.gameWon == false) {
-					popups.toggleLoser;
+				if (game.currentRow > 9 && game.gameWon === false) {
+					popups.toggleLoser();
 				} else {
 					document.getElementById('enter_' + game.currentRow).style.background = 'lime';
 				}
